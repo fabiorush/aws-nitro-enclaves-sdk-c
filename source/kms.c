@@ -2665,7 +2665,7 @@ int aws_kms_decrypt_blocking(
 
     rc = s_aws_nitro_enclaves_kms_client_call_blocking(client, kms_target_decrypt, request, &response);
     if (rc != 200) {
-        fprintf(stderr, "Got non-200 [URQUIZA] answer from KMS: %d\n%s\n", rc, aws_string_c_str(response));
+        fprintf(stderr, "Got non-200 [URQUIZA] answer from KMS: %d\n%s\n%s\n", rc, aws_string_c_str(request), aws_string_c_str(response));
         goto err_clean;
     }
 
@@ -2724,7 +2724,7 @@ int aws_kms_encrypt_blocking(
 
     rc = s_aws_nitro_enclaves_kms_client_call_blocking(client, kms_target_encrypt, request, &response);
     if (rc != 200) {
-        fprintf(stderr, "Got non-200 [URQUIZA] answer from KMS: %d\n%s\n", rc, aws_string_c_str(response));
+        fprintf(stderr, "Got non-200 [URQUIZA] answer from KMS: %d\n%s\n%s\n", rc, aws_string_c_str(request), aws_string_c_str(response));
         goto err_clean;
     }
 
@@ -2794,7 +2794,7 @@ int aws_kms_generate_data_key_blocking(
 
     rc = s_aws_nitro_enclaves_kms_client_call_blocking(client, kms_target_generate_data_key, request, &response);
     if (rc != 200) {
-        fprintf(stderr, "Got non-200 [URQUIZA] answer from KMS: %d\n%s\n", rc, aws_string_c_str(response));
+        fprintf(stderr, "Got non-200 [URQUIZA] answer from KMS: %d\n%s\n%s\n", rc, aws_string_c_str(request), aws_string_c_str(response));
         goto err_clean;
     }
 
@@ -2861,7 +2861,7 @@ int aws_kms_generate_random_blocking(
 
     rc = s_aws_nitro_enclaves_kms_client_call_blocking(client, kms_target_generate_random, request, &response);
     if (rc != 200) {
-        fprintf(stderr, "Got non-200 [URQUIZA] answer from KMS: %d\n%s\n", rc, aws_string_c_str(response));
+        fprintf(stderr, "Got non-200 [URQUIZA] answer from KMS: %d\n%s\n%s\n", rc, aws_string_c_str(request), aws_string_c_str(response));
         goto err_clean;
     }
 
