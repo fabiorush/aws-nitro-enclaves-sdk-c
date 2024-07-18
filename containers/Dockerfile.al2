@@ -59,7 +59,7 @@ RUN cmake3 -DCMAKE_PREFIX_PATH=/usr -DBUILD_TESTING=0 -DCMAKE_INSTALL_PREFIX=/us
 RUN cmake3 --build aws-c-auth/build --parallel $(nproc) --target install
 
 RUN git clone --depth 1 -b json-c-0.16-20220414 https://github.com/json-c/json-c.git
-RUN cmake3 -DCMAKE_PREFIX_PATH=/usr -DBUILD_TESTING=0 -DCMAKE_INSTALL_PREFIX=/usr -DBUILD_SHARED_LIBS=OFF -GNinja -S json-c -B json-c/build
+RUN cmake3 -DCMAKE_PREFIX_PATH=/usr -DBUILD_TESTING=0 -DCMAKE_INSTALL_PREFIX=/usr -DBUILD_SHARED_LIBS=ON -GNinja -S json-c -B json-c/build
 RUN cmake3 --build json-c/build --parallel $(nproc)  --target install
 
 RUN git clone --depth 1 -b v0.4.0 https://github.com/aws/aws-nitro-enclaves-nsm-api.git
